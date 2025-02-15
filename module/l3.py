@@ -39,7 +39,7 @@ def layer3():
     while True:
         logo()
         select = input(f"""
-╔═══[{ceplix}root{clear}@{ceplix}ZOIC{clear}]
+╔═══[{ceplix}root{clear}@{ceplix}CEPLIX{clear}]
 ╚══{ceplix}>{clear} """)
                                         
         if select == "1" or select.lower() == "1":
@@ -51,7 +51,7 @@ def layer3():
 
                         send(packet, verbose=False)
 
-                        print(f"[{ceplix}ZOIC{clear}] IP Address {ceplix}:{clear} {target} {ceplix}|{clear} ICMP Packet {ceplix}:{clear} {white}65500{clear}")
+                        print(f"[{ceplix}CEPLIX{clear}] IP Address {ceplix}:{clear} {target} {ceplix}|{clear} ICMP Packet {ceplix}:{clear} {white}65500{clear}")
 
                 except Exception as e:
                     print(f"[{red}WARNING{clear}] Check your permissions or install {ceplix}Npcap{clear} : https://npcap.com/#download")
@@ -80,7 +80,7 @@ def layer3():
             def ping(target):
                 os.system(f"ping {target} -t -l 65500")
 
-            target = input(f"[{zoic}ZOIC{clear}] IP {zoic}>{clear} ")
+            target = input(f"[{ceplix}CEPLIX{clear}] IP {ceplix}>{clear} ")
 
             ping(target)
 
